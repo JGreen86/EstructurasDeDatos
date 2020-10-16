@@ -11,7 +11,7 @@ int factorialIterativo(int n) {
     return fact;
 }
 int factorialRecursivo(int n) {
-    if(n == 0 || n == 1) return n;
+    if(n == 0 || n == 1) return 1;
 
     return factorialRecursivo(n - 1) * n;
 }
