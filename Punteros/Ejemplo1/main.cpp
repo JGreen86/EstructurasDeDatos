@@ -9,8 +9,7 @@ int main() {
     // de tipo entero
     p = &x; // p almacena la dirección de memoria de x, es decir, p apunta a x
 
-    *p = 8; // esto
-    x = 3; // es igual a esto
+    *p = 8;
 
     cout<<"x = "<<x<<endl;
     cout<<"p = "<<p<<endl<<"y la direccion de memoria de x es "<<&x<<endl;
