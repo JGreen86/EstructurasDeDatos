@@ -13,9 +13,13 @@ int main() {
     arbol.add(40,"manuel");
     arbol.add(70,"enrique vii");
     arbol.add(95,"alejandra");
+    arbol.add(15,"Angela");
 
-    arbol.remove(80);
+    cout<<"Inorden"<<endl;
     arbol.printInOrden();
-
+    cout<<"Preorden"<<endl;
+    arbol.printPreOrden();
+    cout<<"Postorden"<<endl;
+    arbol.printPostOrden();
     return 0;
 }

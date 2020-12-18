@@ -24,6 +24,8 @@ class ABB {
         void buscarSucesor(Nodo *&padre, Nodo *&sucesor);
         void eliminarNodo(Nodo *&padre, Nodo *&aux, int nHijos);
         void inorden(Nodo *raiz);
+        void preorden(Nodo *raiz);
+        void postorden(Nodo *raiz);
         void clear(Nodo *raiz);
         int obtenerNumHijos(Nodo nodo);
 
@@ -37,6 +39,8 @@ class ABB {
         void set(int key, T value);
         bool empty();
         void printInOrden();
+        void printPreOrden();
+        void printPostOrden();
         void clear();
         ~ABB(){
             clear();
@@ -77,7 +81,7 @@ void ABB<T>::remove(int key) {
 
     buscarNodo(aux, padre, key);
     if(aux == nullptr) return; // el nodo no existe en el arbol
-    
+    // nodo encontrado
     int nHijos = obtenerNumHijos(*aux);
     eliminarNodo(padre, aux, nHijos);
 }
@@ -88,6 +92,14 @@ bool ABB<T>::empty() {
 template <class T>
 void ABB<T>::printInOrden() {
     ABB<T>::inorden(raiz);
+}
+template <class T>
+void ABB<T>::printPreOrden() {
+    ABB<T>::preorden(raiz);
+}
+template <class T>
+void ABB<T>::printPostOrden() {
+    ABB<T>::postorden(raiz);
 }
 template <class T>
 void ABB<T>::clear() {
@@ -166,6 +178,22 @@ void ABB<T>::inorden(Nodo *raiz) {
         inorden(raiz->izquierdo);
         std::cout<<"Key = "<<raiz->key<<" Value = "<<raiz->value<<std::endl;
         inorden(raiz->derecho);
+    }
+}
+template <class T>
+void ABB<T>::preorden(Nodo *raiz) {
+    if(raiz != nullptr) {
+        std::cout<<"Key = "<<raiz->key<<" Value = "<<raiz->value<<std::endl;
+        preorden(raiz->izquierdo);
+        preorden(raiz->derecho);
+    }
+}
+template <class T>
+void ABB<T>::postorden(Nodo *raiz) {
+    if(raiz != nullptr) {
+        postorden(raiz->izquierdo);
+        postorden(raiz->derecho);
+        std::cout<<"Key = "<<raiz->key<<" Value = "<<raiz->value<<std::endl;
     }
 }
 template <class T>
