@@ -67,7 +67,7 @@ bool ordenarDescendente(Automovil auto1, Automovil auto2) {
 // comparar autos por marca, ordenar por marca de manera ascendente
 struct compararPorMarca {
     bool operator()(Automovil auto1, Automovil auto2) {
-        return auto1.getMarca() < auto2.getMarca();
+        return auto1.getMarca() > auto2.getMarca();
     }
 };
 
@@ -86,7 +86,7 @@ int main() {
         Automovil("bocho","volkswagen","azul",2,1984)
     };
 
-    listaDeAutos.sort(compararPorMarca()); // ordenar por año de menor a mayor
+    listaDeAutos.sort(); // ordenar por año de menor a mayor
     imprimir(listaDeAutos);
 
 

@@ -17,7 +17,7 @@ int main () {
     int arreglo[] = {5,3,1,7,4,2,8,6};
     int n = sizeof(arreglo)/sizeof(arreglo[0]); // tamaño del arreglo
 
-    std::sort(arreglo,arreglo+n);
+    std::sort(arreglo,arreglo+n); // por default ordena de menor a mayor
     imprimir(arreglo, n);
 
     // ejemplo 2 - ordenar un arreglo en orden descendente
