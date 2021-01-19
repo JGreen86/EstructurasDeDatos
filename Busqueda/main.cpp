@@ -1,6 +1,5 @@
 #include <iostream>
 #include <unordered_map>
-#include <vector>
 
 class Automovil
 {
@@ -66,7 +65,7 @@ public:
     }
 };
 
-void imprimir(std::unordered_map<std::string,Automovil> map) {
+void imprimirCatalogo(std::unordered_map<std::string,Automovil> map) {
     for(auto& x : map) {
         std::cout<<"Número de serie = "<<x.first<<", ";
         x.second.imprimir();
@@ -75,6 +74,7 @@ void imprimir(std::unordered_map<std::string,Automovil> map) {
 int main() {
     std::unordered_map<std::string,Automovil> catalogo;
 
+    // inserción (alta de un automovil en el catalogo)
     std::pair<std::string,Automovil> auto1("JHR451231",Automovil("JHR451231","versa","nissan","blanco",4,2015));
 
     catalogo.insert(auto1);
@@ -91,7 +91,30 @@ int main() {
         {"DAC784512",Automovil("DAC784512","bronco","ford","rojo",2,1998)},
         {"LOL451231",Automovil("LOL451231","bocho","volkswagen","azul",2,1984)}
     });
+    
+    std::pair<std::unordered_map<std::string,Automovil>::iterator, bool> r = catalogo.insert(
+    {
+        "ABC45515",
+        Automovil("ABC45515","mustang","ford","amarillo",2,1965)
+    }
+    );
+    std::cout<<"Insertado "<<r.second<<std::endl;
 
-    imprimir(catalogo);
+    imprimirCatalogo(catalogo);
+
+    Automovil elAuto = catalogo.at("LOL451231"); // consulta de un automovil en el catalogo
+    std::cout<<"\n";
+    elAuto.imprimir();
+
+    std::cout<<"\n";
+
+    catalogo.at("DAC784512").setColor("negro"); // actualización o  modificación de un automovil en el catalogo
+    Automovil elAuto2 = catalogo.at("DAC784512");
+    elAuto2.imprimir();
+
+    std::cout<<"\n";
+    catalogo.erase("JHR451231"); // eliminación (baja de un automovil en el catalogo)
+    imprimirCatalogo(catalogo);
+
     return 0;
 }
