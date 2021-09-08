@@ -7,7 +7,7 @@ int main(){
 
     double lado=5.0,radio=4.0;
 
-    Circulo circ1;
+    Circulo circ1(radio);
     Cuadrado cuad1(lado);
 
     std::cout<<"Perimetro del cuadrado: "<<cuad1.Perimetro()<<std::endl;
