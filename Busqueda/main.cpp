@@ -112,6 +112,14 @@ int main() {
     Automovil elAuto2 = catalogo.at("DAC784512");
     elAuto2.imprimir();
 
+    std::unordered_map<std::string,Automovil>::const_iterator elAuto3 = catalogo.find("DAC784512");
+    if(elAuto3 == catalogo.end())
+        std::cout<<"No encontrado"<<std::endl;
+    else { // encontrado
+        catalogo.at("DAC784512").setColor("Rosa");
+    }
+    imprimirCatalogo(catalogo);
+
     std::cout<<"\n";
     catalogo.erase("JHR451231"); // eliminación (baja de un automovil en el catalogo)
     imprimirCatalogo(catalogo);
