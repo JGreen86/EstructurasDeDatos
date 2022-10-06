@@ -1,20 +1,20 @@
 #include <iostream>
 using namespace std;
 
-void hanoi(int a, int b, int c, int n) {
+void hanoi(int t1, int t2, int t3, int n) {
   if(n == 1) { // caso base
-    cout<<"Mover disco "<<n<<" de la torre "<<a<<" a la torre "<<c<<endl;
+    cout<<"Mover disco "<<n<<" de la torre "<<t1<<" a la torre "<<t3<<endl;
   } else { // caso recursivo
-    hanoi(a, c, b, n-1);
-    cout<<"Mover disco "<<n<<" de la torre "<<a<<" a la torre "<<c<<endl;
-    hanoi(b, a, c, n-1);
+    hanoi(t1, t3, t2, n-1);
+    cout<<"Mover disco "<<n<<" de la torre "<<t1<<" a la torre "<<t3<<endl;
+    hanoi(t2, t1, t3, n-1);
   }
 }
 
 int main() {
-  int a = 1;
-  int b = 2;
-  int c = 3;
+  int t1 = 1;
+  int t2 = 2;
+  int t3 = 3;
   int n = 3; // discos
-  hanoi(a, b, c, n);
+  hanoi(t1, t2, t3, n);
 }
