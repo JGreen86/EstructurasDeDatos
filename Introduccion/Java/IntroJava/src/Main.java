@@ -11,8 +11,10 @@ public class Main {
         //////////////////OBJETOS////////////////////
         Usuario usuario = new Usuario();
         usuario.setNombre("Homero");
+        usuario.setApellidoPat("Simpson");
         String nombre = usuario.getNombre();
-        System.out.println(nombre);
+        String apellidoPat = usuario.getApellidoPat();
+        System.out.println(nombre + " " + apellidoPat);
 
         Usuario usuario2 = new Usuario("Bart");
         String nombre2 = usuario2.getNombre();
