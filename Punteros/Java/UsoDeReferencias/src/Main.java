@@ -4,7 +4,7 @@ public class Main {
         int x = 5;
         int y = x;
         y = 7;
-        System.out.println(y); // 'x' no se ve afectada for 'z'
+        System.out.println(x); // 'x' no se ve afectada for 'z'
         ///////////////////////////Objetos//////////////////////////////
         Persona persona1 = new Persona("Homero Simpson", 47);
         Persona persona2 = persona1;
