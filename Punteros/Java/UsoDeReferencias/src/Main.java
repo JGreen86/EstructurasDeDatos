@@ -1,6 +1,3 @@
-import com.sun.deploy.perf.PerfRollup;
-import com.sun.xml.internal.bind.v2.runtime.output.SAXOutput;
-
 public class Main {
 
     private static void actualizarNombre(Persona persona, String nombreNuevo) {
