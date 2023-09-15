@@ -30,6 +30,7 @@ public class Main {
         Persona homero = new Persona("Homero", 47);
         actualizarNombre(homero, "Bart");
         System.out.println(homero.getNombre());
+        homero.setNombre("Homero");
 
         Persona clonDeHomero = clonarPersona(homero);
         System.out.println(clonDeHomero.getNombre());
