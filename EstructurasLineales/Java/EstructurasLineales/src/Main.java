@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.*;
 
 public class Main {
 
@@ -8,11 +8,14 @@ public class Main {
             System.out.println(p.toString());
         }
     }
-    /*private static Producto buscarProducto(ArrayList<Producto> productos,String nombre) {
+    private static Producto buscarProducto(ArrayList<Producto> productos,String nombre) {
+        for (Producto producto : productos)
+            if (producto.getNombre().equals(nombre))
+                return producto;
+        return null;
+    }
 
-    }*/
-
-    public static void main(String[] args) {
+    private static void ejemploListas() {
         // Listas en Java
         ArrayList<String> listaDeCompras = new ArrayList<>();
         // Agregar
@@ -58,8 +61,58 @@ public class Main {
             System.out.println(listaDeProductos.get(i).toString());
         }
         imprimirProductos(listaDeProductos);
+
         Producto manzana = new Producto("Manzana", 60);
         listaDeProductos.add(1, manzana);
         imprimirProductos(listaDeProductos);
+
+        Producto miProducto = buscarProducto(listaDeProductos, "Sushi");
+        if (miProducto != null) {
+            System.out.println("Mi producto: " + miProducto.toString());
+        } else {
+            System.out.println("Producto no encontrado.");
+        }
+        try {
+            System.out.println("Mi producto: " + miProducto.toString());
+        } catch (NullPointerException e) {
+            System.out.println("Producto no encontrado.");
+        }
+    }
+
+    private static void ejemploPila() {
+        Stack<Integer> pila = new Stack<>();
+        pila.push(5);
+        pila.push(6);
+        pila.push(4);
+        pila.push(8);
+        pila.push(2);
+
+        Integer a = pila.pop();
+        System.out.println(a);
+
+        a = pila.pop();
+        System.out.println(a);
+
+        a = pila.peek();
+        System.out.println(a);
+
+        a = pila.peek();
+        System.out.println(a);
+
+        System.out.println("El tamaño de la pila es " + pila.size());
+
+        if (pila.isEmpty())
+            System.out.println("Pila vacia");
+        else
+            System.out.println("Pila no vacia");
+
+        while (!pila.isEmpty()) {
+            a = pila.pop();
+            System.out.println(a);
+        }
+    }
+
+    public static void main(String[] args) {
+        ejemploPila();
     }
 }
