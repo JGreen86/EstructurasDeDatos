@@ -112,7 +112,34 @@ public class Main {
         }
     }
 
+    private static void ejemploCola() {
+
+        Calculadora calculadora = new Calculadora();
+        Operacion operacion = new Calculadora();
+
+        LinkedList<Integer> lista = new LinkedList<>();
+
+        Queue<Integer> cola = new LinkedList<>();
+        cola.add(6);
+        cola.add(5);
+        cola.add(4);
+        cola.add(8);
+        cola.add(3);
+
+        Integer a = cola.poll();
+        System.out.println(a);
+
+        a = cola.poll();
+        System.out.println(a);
+
+        a = cola.peek();
+        System.out.println(a);
+
+        a = cola.peek();
+        System.out.println(a);
+    }
+
     public static void main(String[] args) {
-        ejemploPila();
+        ejemploCola();
     }
 }
