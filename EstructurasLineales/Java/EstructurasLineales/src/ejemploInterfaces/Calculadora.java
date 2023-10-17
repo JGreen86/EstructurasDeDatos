@@ -1,3 +1,5 @@
+package ejemploInterfaces;
+
 public class Calculadora implements Operacion, Convertidor {
 
     public Calculadora() {

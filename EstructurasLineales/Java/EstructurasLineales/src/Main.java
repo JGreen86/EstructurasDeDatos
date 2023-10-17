@@ -1,3 +1,7 @@
+import ejemploInterfaces.Calculadora;
+import ejemploInterfaces.Operacion;
+import pilas.Pila;
+
 import java.util.*;
 
 public class Main {
@@ -113,18 +117,17 @@ public class Main {
     }
 
     private static void ejemploCola() {
-
-        Calculadora calculadora = new Calculadora();
         Operacion operacion = new Calculadora();
-
-        LinkedList<Integer> lista = new LinkedList<>();
+        Calculadora calculadora = new Calculadora();
 
         Queue<Integer> cola = new LinkedList<>();
-        cola.add(6);
+        LinkedList<Integer> lista = new LinkedList<>();
+
         cola.add(5);
+        cola.add(6);
         cola.add(4);
         cola.add(8);
-        cola.add(3);
+        cola.add(2);
 
         Integer a = cola.poll();
         System.out.println(a);
@@ -137,9 +140,46 @@ public class Main {
 
         a = cola.peek();
         System.out.println(a);
+        System.out.println("=======================");
+        while (!cola.isEmpty()) {
+            a = cola.poll();
+            System.out.println(a);
+        }
     }
 
+    private static void ejemploPila2() {
+        Pila<Integer> pila = new Pila<>();
+        pila.push(5);
+        pila.push(6);
+        pila.push(4);
+        pila.push(8);
+        pila.push(2);
+
+        Integer a = pila.pop();
+        System.out.println(a);
+
+        a = pila.pop();
+        System.out.println(a);
+
+        a = pila.peek();
+        System.out.println(a);
+
+        a = pila.peek();
+        System.out.println(a);
+
+        System.out.println("El tamaño de la pila es " + pila.size());
+
+        if (pila.isEmpty())
+            System.out.println("Pila vacia");
+        else
+            System.out.println("Pila no vacia");
+
+        while (!pila.isEmpty()) {
+            a = pila.pop();
+            System.out.println(a);
+        }
+    }
     public static void main(String[] args) {
-        ejemploCola();
+        ejemploPila();
     }
 }

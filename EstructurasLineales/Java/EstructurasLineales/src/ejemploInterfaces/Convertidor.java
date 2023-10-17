@@ -1,3 +1,5 @@
+package ejemploInterfaces;
+
 public interface Convertidor {
 
     double metrosAcentimetros(double metros);
