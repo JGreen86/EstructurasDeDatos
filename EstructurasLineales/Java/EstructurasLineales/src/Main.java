@@ -1,3 +1,4 @@
+import colas.Cola;
 import ejemploInterfaces.Calculadora;
 import ejemploInterfaces.Operacion;
 import pilas.Pila;
@@ -179,7 +180,26 @@ public class Main {
             System.out.println(a);
         }
     }
+
+    private static void ejemploCola2() {
+        Cola<Integer> cola = new Cola<>();
+        cola.add(1);
+        cola.add(2);
+        cola.add(3);
+
+        while (!cola.isEmpty())
+            System.out.println(cola.poll());
+    }
     public static void main(String[] args) {
-        ejemploPila();
+//        ejemploCola2();
+        // Listas
+        List<Integer> lista1 = new ArrayList<>();
+        List<Integer> lista2 = new LinkedList<>();
+        // Colas
+        Queue<Integer> cola1 = new LinkedList<>();
+        Deque<Integer> cola2 = new LinkedList<>();
+        Deque<Integer> cola3 = new ArrayDeque<>();
+        // Pilas
+        Stack<Integer> pila = new Stack<>();
     }
 }
