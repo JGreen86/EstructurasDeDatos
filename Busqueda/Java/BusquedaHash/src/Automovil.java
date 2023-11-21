@@ -1,4 +1,4 @@
-public class Automovil {
+public class Automovil implements Comparable<Automovil> {
     private String noSerie;
     private String marca;
     private String modelo;
@@ -73,5 +73,10 @@ public class Automovil {
                 ", color='" + color + '\'' +
                 ", noPuertas=" + noPuertas +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Automovil automovil) {
+        return this.marca.compareTo(automovil.getMarca());
     }
 }

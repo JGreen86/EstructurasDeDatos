@@ -12,8 +12,8 @@ public class Main {
 
     public static void main(String[] args) {
         Automovil versa2023 = new Automovil("C001","Nissan","Versa",2023,"Rojo",4);
-        Automovil mustang = new Automovil("C002", "Ford", "Mustang", 1965, "Verde", 2);
-        Automovil cheyenne = new Automovil("A104", "Chevrolet", "Cheyene", 2000, "Negro", 4);
+        Automovil mustang = new Automovil("C002", "Ford", "Mustang", 2015, "Verde", 2);
+        Automovil cheyenne = new Automovil("A104", "Chevrolet", "Cheyene", 1980, "Negro", 4);
 
         List<Automovil> listaDeAutomoviles = new ArrayList<>();
         listaDeAutomoviles.add(versa2023);
@@ -58,6 +58,18 @@ public class Main {
         catalogoDeAutomoviles.put(carrito.getNoSerie(), carrito);
         imprimirCatalogo(catalogoDeAutomoviles);
 
+        System.out.println("=====Lista de carritos=====");
+        ArrayList<Automovil> listaDeCarritos = new ArrayList<>(catalogoDeAutomoviles.values());
+        System.out.println(listaDeCarritos);
 
+        Collections.sort(listaDeCarritos, (auto1, auto2) -> auto2.getAnio() - auto1.getAnio());
+        System.out.println("===== Lista ordenada de mayor a menor, por año =====");
+        System.out.println(listaDeCarritos);
+
+        int r = versa2023.compareTo(cheyenne);
+        System.out.println("Diferencia = " + r);
+        Collections.sort(listaDeCarritos);
+        System.out.println("===== Lista ordenada ======");
+        System.out.println(listaDeCarritos);
     }
 }
