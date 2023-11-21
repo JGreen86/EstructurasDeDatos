@@ -1,3 +1,5 @@
+import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.*;
 
 public class Main {
@@ -15,7 +17,7 @@ public class Main {
         Automovil mustang = new Automovil("C002", "Ford", "Mustang", 2015, "Verde", 2);
         Automovil cheyenne = new Automovil("A104", "Chevrolet", "Cheyene", 1980, "Negro", 4);
 
-        List<Automovil> listaDeAutomoviles = new ArrayList<>();
+        /*List<Automovil> listaDeAutomoviles = new ArrayList<>();
         listaDeAutomoviles.add(versa2023);
         listaDeAutomoviles.add(mustang);
         listaDeAutomoviles.add(cheyenne);
@@ -70,6 +72,29 @@ public class Main {
         System.out.println("Diferencia = " + r);
         Collections.sort(listaDeCarritos);
         System.out.println("===== Lista ordenada ======");
-        System.out.println(listaDeCarritos);
+        System.out.println(listaDeCarritos);*/
+
+        // Fechas
+        Date fecha = new Date();
+        System.out.println(fecha.toString());
+        LocalDateTime fecha2 = LocalDateTime.now();
+        System.out.println(fecha2.toString());
+
+        Instant instant = Instant.now();
+        String fecha3 = DateUtils.getDate(instant);
+        System.out.println(fecha3);
+        String hora = DateUtils.getTime(instant);
+        System.out.println(hora);
+        String fechaCompleta = DateUtils.getDateTime(instant);
+        System.out.println(fechaCompleta);
+        // Cola de prioridad
+        PriorityQueue<Automovil> colaDePrioridad = new PriorityQueue<>((auto1, auto2) -> auto1.getAnio() - auto2.getAnio());
+        colaDePrioridad.add(versa2023);
+        colaDePrioridad.add(cheyenne);
+        colaDePrioridad.add(mustang);
+
+        System.out.println(colaDePrioridad.poll());
+        System.out.println(colaDePrioridad.poll());
+        System.out.println(colaDePrioridad.poll());
     }
 }

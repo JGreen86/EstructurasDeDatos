@@ -77,6 +77,6 @@ public class Automovil implements Comparable<Automovil> {
 
     @Override
     public int compareTo(Automovil automovil) {
-        return this.marca.compareTo(automovil.getMarca());
+        return automovil.getMarca().compareTo(this.marca);
     }
 }
